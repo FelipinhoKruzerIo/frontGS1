@@ -32,7 +32,7 @@ export class HomeComponent {
         lat: -23.54432679706785,
         lng: -46.593609141410425,
       },
-      label: 'Nome FOda',
+      label: 'Lixão da mãe Lucinda',
       zIndex: 100,
     },
     {
@@ -40,15 +40,7 @@ export class HomeComponent {
         lat: -23.54520216916703,
         lng: -46.59564762016256,
       },
-      label: 'Nome Legal',
-      zIndex: 100,
-    },
-    {
-      position: {
-        lat: -23.544474332099618,
-        lng: -46.59189252772442,
-      },
-      label: 'Opaaa',
+      label: 'Lixo lixoso',
       zIndex: 100,
     },
   ];
