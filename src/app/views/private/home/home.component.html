@@ -1,0 +1,74 @@
+<div>
+  <div class="p-4 md:p-16 h-[90vh] bg-grey-light flex items-center">
+    <div class="w-full md:w-3/5">
+      <h1 class="font-unica text-dark-blue-60">CARING</h1>
+      <h2 class="font-martian">Guardians</h2>
+    </div>
+  </div>
+  <div class="p-4 md:p-16 bg-white">
+    <h3 class="text-black w-full md:w-1/2">
+      Your relatives were there every step of the way as you grew. Now it's your
+      turn to guard their steps.
+    </h3>
+  </div>
+  <div class="p-4 md:p-16 pb-0 bg-dark-blue-60">
+    <div class="h-[50vh] flex flex-col md:flex-row gap-4 mb-10">
+      <img
+        class="w-full md:w-4/5 rounded-lg object-cover"
+        src="../../../../assets/images/idosos-felizes.png"
+        alt="happy old persons"
+      />
+      <div class="my-auto">
+        <h3 class="text-white mb-2">
+          Everything you need for your relative's safety.
+        </h3>
+        <p class="text-white">
+          Be the caring guardian for your relatives living alone. With us, you
+          can ensure they're safe and sound, from anywhere in the world.
+        </p>
+      </div>
+    </div>
+    <div class="h-[50vh] flex gap-4 flex-col md:flex-row">
+      <img
+        class="w-full md:w-4/5 rounded-lg object-cover md:hidden block"
+        src="../../../../assets/images/idoso-machucado.png"
+        alt="sad old person"
+      />
+      <div class="my-auto">
+        <h3 class="text-white mb-2">Our specialised functions</h3>
+        <p class="text-white">
+          From fire alerts to gas leak notifications and crucial fall
+          detections, we’ve got it all covered.
+        </p>
+      </div>
+      <img
+        class="w-full md:w-4/5 rounded-lg object-cover hidden md:block"
+        src="../../../../assets/images/idoso-machucado.png"
+        alt="sad old person"
+      />
+    </div>
+    <div class="h-[25rem] md:mt-0 mt-16">
+      <h3 class="text-white">Test our functions</h3>
+      <google-map
+        height="100%"
+        width="100%"
+        [center]="center"
+        [zoom]="zoom"
+        (mapClick)="moveMap($event)"
+        (mapMousemove)="move($event)"
+        [options]="{ mapTypeControl: false, fullscreenControl: false }"
+        (mapInitialized)="handleMapInitialized($event)"
+      >
+        <map-marker
+          *ngFor="let marker of markers"
+          [position]="marker.position"
+        ></map-marker>
+      </google-map>
+    </div>
+  </div>
+  <div class="p-10 bg-dark-blue-60">
+    <p class="text-white text-sm text-center">
+      © 2024 Caring Guardians Inc. All rights reserved.
+    </p>
+  </div>
+</div>

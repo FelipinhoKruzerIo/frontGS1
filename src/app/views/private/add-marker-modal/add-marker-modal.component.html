@@ -1,0 +1,53 @@
+<div class="h-fit w-full md:h-[20rem] md:w-[45rem] bg-dark-blue-40 rounded-t">
+  <div class="bg-dark-blue-60 rounded-t p-2">
+    <h4 class="text-grey-light font-semibold font-martian">
+      Add a pollution marker
+    </h4>
+  </div>
+  <div class="flex flex-col gap-3 p-4">
+    <p class="text-sm text-grey-light font-medium font-martian">
+      If this is a polluted area type the label and confirm to add a marker to
+      the map.
+    </p>
+    <form [formGroup]="form">
+      <div class="flex flex-col gap-1">
+        <label class="text-grey-light text-base" for="label">Label</label>
+        <div class="w-full">
+          <input
+            formControlName="label"
+            [ngClass]="
+              this.label.errors && this.label.touched
+                ? 'border border-error-20'
+                : ''
+            "
+            class="text-dark-blue-50 bg-grey-light font-martian px-2 py-1 rounded w-full"
+            type="text"
+            name="label"
+          />
+          <p
+            *ngIf="this.label.errors && this.label.touched"
+            class="text-error-20 text-sm"
+          >
+            required
+          </p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="flex w-full justify-end bg-dark-blue-50 rounded-b">
+  <div class="p-2 flex gap-2">
+    <button
+      (click)="onClose()"
+      class="px-2 py-1 bg-error-20 rounded font-medium text-grey-light"
+    >
+      Cancel
+    </button>
+    <button
+      (click)="onClose(true)"
+      class="px-2 py-1 bg-grey-light rounded font-medium"
+    >
+      Save
+    </button>
+  </div>
+</div>
